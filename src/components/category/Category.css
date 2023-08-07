@@ -1,0 +1,31 @@
+.category-container{
+    padding: 0% 5%;
+    margin: 70px 0;
+}
+.category-result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 80px;
+    column-gap: 20px;
+}
+/* .category-card{
+    margin: 40px 0 80px 0;
+} */
+.category-name{
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 15px 0;
+}
+@media screen and (max-width:350px){
+    .category-container{
+        padding: 0 1%;
+    }
+    .category-result{
+        column-gap: 5px;
+    }
+    .category-name{
+        font-size: 1.4rem;
+    }
+}
