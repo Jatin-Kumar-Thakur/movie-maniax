@@ -27,10 +27,10 @@ export default function Card(prop) {
           //     <img src={`https://image.tmdb.org/t/p/original/${movie && movie.poster_path}`} alt="Card" />
           //   </div>
           // </Link >
-          <Link to={`/movie/${prop.movie.id}`} className='movie-poster-link'>
+          <Link to={`/movie/${prop.movie.id}`} className='movie-poster-link' key={prop.movie.id}>
             <article className="category-card">
               <div className="card-image">
-                <img src={`https://image.tmdb.org/t/p/original/${prop.movie && prop.movie.poster_path}`} alt="Poster" />
+                <img src={`https://image.tmdb.org/t/p/original/${prop.movie && prop.movie.poster_path}`} alt="Poster" key={prop.movie.id}/>
               </div>
               <div className="card-overlay">
                 <div className="title">

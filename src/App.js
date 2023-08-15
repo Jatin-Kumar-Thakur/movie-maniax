@@ -4,7 +4,7 @@ import Navbar from "./components/navbar/Navbar.js";
 import Home from "./components/home/Home";
 import MovieDetail from "./components/movieDescription/MovieDetail"
 import Footer from "./components/footer/Footer";
-import Category from "./components/category/Category";
+import Category from "./components/category/Categoryes";
 function App() {
   return (
     <div className="App">

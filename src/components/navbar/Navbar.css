@@ -60,6 +60,19 @@
     border-bottom: none !important;
     text-align: center;
 }
+.category-list{
+    background-color: rgba(44, 43, 43, 0.596);
+    position: relative;
+    top: 4px;
+    /* display: none; */
+}
+.category-list p{
+    /* padding: 0 10px; */
+}
+.category-title p:hover+.category-list{
+    display: block;
+}
+
 @media screen and (max-width:700px){
     .nav-main{
         padding: 0 2%;

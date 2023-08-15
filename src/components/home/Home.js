@@ -3,10 +3,10 @@ import './Home.css'
 import HomeCategory from './HomeCategory.js';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import { Star } from 'lucide-react';
+// import { Star } from 'lucide-react';
 import { useEffect ,useState } from 'react'
 import { Link } from 'react-router-dom';
-import Card from '../card/Card.js';
+// import Card from '../card/Card.js';
 export default function Home() {
     const[movies,setMovies]=useState([])
     const api="https://api.themoviedb.org/3/movie/popular?api_key=4bf73e8e0478d507ae91abf15f8bd79f&language=en-US";
@@ -37,7 +37,7 @@ export default function Home() {
                 > 
                     {
                         movies.map(movie=>(
-                            <Link to={`/movie/${movie.id}`} className='movie-poster-link'>
+                            <Link to={`/movie/${movie.id}`} className='movie-poster-link' key={movie.id}>
                                 <div className="posterImage">
                                     <img src={`https://image.tmdb.org/t/p/original/${movie && movie.backdrop_path}`} alt="hello" />
                                 </div>

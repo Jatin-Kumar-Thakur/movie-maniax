@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import HomeCategory from '../home/HomeCategory';
 export default function MovieDetail() {
     const { id } = useParams();
-    console.log(`${id}`);
+    // console.log(`${id}`);
     const [movie, setMovie] = useState([])
     const [category, setCategory] = useState([]);
     const [language, setLanguage] = useState([]);
@@ -27,7 +27,7 @@ export default function MovieDetail() {
 
     useEffect(() => {
         fetchApiData(api);
-    }, [])
+    }, [api])
     return (
         <div className='movie-main'>
             <div className="movie-container">
@@ -38,7 +38,7 @@ export default function MovieDetail() {
                         </div>
                         {/* <img src={`https://image.tmdb.org/t/p/original/${movie && movie.backdrop_path}`} alt="hello" /> */}
                     </div>
-                    <div className="movie-detail">
+                    <div className="movie-detail" key={id}>
                         <h1>{movie.title}</h1>
                         <h3>{movie.tagline}</h3>
                         <div className="movie-type">

@@ -6,6 +6,7 @@ import Card from '../card/Card.js'
 
 
 export default function HomeCategory(prop) {
+  // const [temp]=useState("temp");
   const [topMovies, setTopMovies] = useState([])
   const api = `https://api.themoviedb.org/3/movie/${prop.category}?api_key=4bf73e8e0478d507ae91abf15f8bd79f&language=en-US`;
   const fetchApiData = async (url) => {
@@ -22,7 +23,7 @@ export default function HomeCategory(prop) {
 
   useEffect(() => {
     fetchApiData(api);
-  }, [])
+  }, [api]);
   return (
     <div className='home-category-main'>
       <div className="home-category-container">
@@ -34,7 +35,7 @@ export default function HomeCategory(prop) {
 
           {
             topMovies.map(movie => (
-              <Card movie={movie}/>
+              <Card movie={movie} key={movie.id} />
               // <Link to={`/movie/${movie.id}`} className='movie-poster-link'>
               //   <article className="category-card">
               //     <div className="card-image">
