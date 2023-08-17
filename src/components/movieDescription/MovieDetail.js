@@ -5,12 +5,10 @@ import { useState, useEffect } from 'react';
 import HomeCategory from '../home/HomeCategory';
 export default function MovieDetail() {
     const { id } = useParams();
-    // console.log(`${id}`);
     const [movie, setMovie] = useState([])
     const [category, setCategory] = useState([]);
     const [language, setLanguage] = useState([]);
     const api = `https://api.themoviedb.org/3/movie/${id}?api_key=4bf73e8e0478d507ae91abf15f8bd79f&language=en-US`;
-    // const api="https://api.themoviedb.org/3/movie/popular?api_key=4bf73e8e0478d507ae91abf15f8bd79f&language=en-US";
     const fetchApiData = async (url) => {
         try {
             const res = await fetch(url);
@@ -18,7 +16,6 @@ export default function MovieDetail() {
             setMovie(data);
             setCategory(data.genres);
             setLanguage(data.spoken_languages);
-            // console.log(data.spoken_languages);
         }
         catch (error) {
             console.log(error);
@@ -31,26 +28,25 @@ export default function MovieDetail() {
     return (
         <div className='movie-main'>
             <div className="movie-container">
-                <div className="movie-detail-section">
+                <div className="movie-detail-section" >
                     <div className="movie-poster">
                         <div className="poster-container">
                             <img src={`https://image.tmdb.org/t/p/original/${movie && movie.poster_path}`} alt="hello" />
                         </div>
-                        {/* <img src={`https://image.tmdb.org/t/p/original/${movie && movie.backdrop_path}`} alt="hello" /> */}
                     </div>
-                    <div className="movie-detail" key={id}>
+                    <div className="movie-detail" >
                         <h1>{movie.title}</h1>
                         <h3>{movie.tagline}</h3>
                         <div className="movie-type">
                             {
                                 category.map(cat => (
-                                    <p>{cat.name}</p>
+                                    <p key={cat.id}>{cat.name}</p>
                                 ))
                             }
                         </div>
-                        <p className="over-view"><p>OverView</p>{movie.overview}</p>
+                        <p className="over-view"><span className='over-view-title'>OverView</span> <br />{movie.overview}</p>
                         <p className='lan'><span>Language: </span> <span className="extra-info">{language.map(lan => (
-                            <span className="extra-info">{lan.english_name} </span> 
+                            <span className="extra-info" key={lan.iso_639_1}>{lan.english_name} </span>
                         ))}</span></p>
                         <p className='rating'><span>Rating:</span> <span className='extra-info'>{movie.vote_average}/10</span></p>
                         <div className="status">
@@ -60,8 +56,8 @@ export default function MovieDetail() {
                         </div>
                     </div>
                 </div>
-                <HomeCategory name="Similar Movies" category={`${id}/similar`}/>
-                <HomeCategory name="Recommended" category={`${id}/recommendations`}/>
+                <HomeCategory name="Similar Movies" category={`${id}/similar`} />
+                <HomeCategory name="Recommended" category={`${id}/recommendations`} />
             </div>
         </div>
     )

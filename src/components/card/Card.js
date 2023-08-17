@@ -22,15 +22,10 @@ export default function Card(prop) {
             </SkeletonTheme>
           </div>
           :
-          // <Link Link to={`movie/${movie.id}`} style={{ textDecoration: "none", color: "white" }}>
-          //   <div className="card-main">
-          //     <img src={`https://image.tmdb.org/t/p/original/${movie && movie.poster_path}`} alt="Card" />
-          //   </div>
-          // </Link >
           <Link to={`/movie/${prop.movie.id}`} className='movie-poster-link' key={prop.movie.id}>
             <article className="category-card">
               <div className="card-image">
-                <img src={`https://image.tmdb.org/t/p/original/${prop.movie && prop.movie.poster_path}`} alt="Poster" key={prop.movie.id}/>
+                <img src={`https://image.tmdb.org/t/p/original/${prop.movie && prop.movie.poster_path}`} alt="Poster" key={prop.movie.id} />
               </div>
               <div className="card-overlay">
                 <div className="title">
