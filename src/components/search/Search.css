@@ -1,0 +1,8 @@
+.search-main{
+    margin: 100px 0 8% 0;
+}
+@media screen and (max-width:500px){
+    .search-main{
+        margin-top:130px ;
+    }
+}

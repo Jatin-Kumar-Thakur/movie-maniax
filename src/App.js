@@ -5,17 +5,22 @@ import Home from "./components/home/Home";
 import MovieDetail from "./components/movieDescription/MovieDetail"
 import Footer from "./components/footer/Footer";
 import Category from "./components/category/Categoryes";
+import Search from "./components/search/Search";
+import { useState } from "react";
 function App() {
+  const [query,setQuery]=useState(["love"]);
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        <Navbar setQuery={setQuery}/>
         <Routes>
-          <Route exact path="/" element={<Home />}></Route>
-          <Route exact path="movie/:id" element={<MovieDetail />}></Route>
+          <Route path="/" element={<Home />}></Route>
+          <Route exact path="/movie/:id" element={<MovieDetail />}></Route>
           <Route exact path="/:category" element={<Category />}></Route>
+          <Route exact path="/search" element={<Search query={query}/>}></Route>
+          {/* <Route exact path="*" element={<Home />}></Route> */}
         </Routes>
-        <Footer />
+          <Footer />
       </Router>
     </div >
   );

@@ -6,6 +6,8 @@ import Card from '../card/Card';
 
 export default function Category(prop) {
     const {category} = useParams();
+    const title=category.toUpperCase();
+    console.log(title);
     const [categoryes, setCategory] = useState([])
     const api = `https://api.themoviedb.org/3/movie/${category}?api_key=4bf73e8e0478d507ae91abf15f8bd79f&language=en-US`;
     const fetchApiData = async (url) => {
@@ -25,7 +27,7 @@ export default function Category(prop) {
     return (
         <div className='category-main'>
             <div className="category-container">
-                <div className="category-name">{category}</div>
+                <div className="category-name">{title}</div>
                 <div className="category-result">
                     {
                         categoryes.map(movie => (

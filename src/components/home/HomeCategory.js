@@ -27,7 +27,7 @@ export default function HomeCategory(prop) {
       <div className="home-category-container">
         <div className="category-title">
           <h2>{prop.name}</h2>
-          <p><Link to={`/${prop.category}`}>See More</Link></p>
+          <p><Link to={`/${prop.category}`} className='button-see-more'>See More</Link></p>
         </div>
         <div className="category-card-section">
 

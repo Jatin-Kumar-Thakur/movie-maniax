@@ -50,13 +50,6 @@
     display: none;
 }
 
-.search-icon {
-    position: relative;
-    top: 8px;
-    width: 30px;
-    height: 30px;
-}
-
 .menu-icon {
     width: 40px;
     height: 40px;
@@ -82,6 +75,42 @@
     display: block;
 }
 
+/* ****************** Create Search Bar**************** */
+.nav-list-link input{
+    padding: 10px;
+    border: none;
+    background-color: antiquewhite;
+    border-radius: 50px;
+}
+.search-icon{
+    position: relative;
+    top: 10px;
+    left: -35px;
+    border-radius: 50px;
+    background-color: antiquewhite;
+    height: 30px;
+    width: 30px;
+    color: black;
+    padding: 3px;
+}
+@media screen and (max-width:500px) {
+    .search-icon{
+        width: 40px;
+        height: 40px;
+    }
+    .search-input1{
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 80%;
+        margin: 0 10%;
+    }
+    .search-input2{
+        display: block !important;
+    }
+
+}
 @media screen and (max-width:700px) {
     .nav-main {
         padding: 0 2%;
